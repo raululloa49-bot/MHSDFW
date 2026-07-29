@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHS Home Improvement Group | Dallas-Fort Worth Remodeling & Construction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d1b2a;
+    --navy-2:#13253a;
+    --silver:#8fa3b8;
+    --silver-light:#c3ccd4;
+    --cream:#f7f8fa;
+    --gray:#5a6672;
+    --line:rgba(143,163,184,0.28);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Manrope', Arial, sans-serif; background:var(--cream); color:#1c2530; line-height:1.5;}
+  h1,h2,h3,h4{font-family:'Cormorant Garamond', Georgia, serif; font-weight:700; letter-spacing:0.3px;}
+  a{color:inherit; text-decoration:none;}
+  .eyebrow{color:var(--silver); font-size:0.78rem; letter-spacing:2.5px; text-transform:uppercase; font-weight:700;}
+  .btn{display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg, var(--silver-light), var(--silver));
+    color:var(--navy); padding:14px 28px; font-size:0.82rem; font-weight:700; letter-spacing:1.3px; text-transform:uppercase;
+    border:none; border-radius:4px; cursor:pointer; box-shadow:0 6px 18px rgba(143,163,184,0.3); transition:box-shadow .25s ease, transform .2s ease;}
+  .btn:hover{box-shadow:0 10px 26px rgba(143,163,184,0.42); transform:translateY(-2px);}
+  .btn-outline{background:transparent; border:1.5px solid var(--silver); color:var(--silver-light); border-radius:4px;}
+  .btn-outline:hover{background:rgba(143,163,184,0.12);}
+  .btn-dark{background:linear-gradient(135deg,#16283b,#0d1b2a); color:var(--cream); border:1px solid #2a4256; border-radius:4px; box-shadow:0 6px 18px rgba(0,0,0,0.3);}
+  .btn-dark:hover{box-shadow:0 10px 24px rgba(0,0,0,0.4); transform:translateY(-2px);}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  header{background:linear-gradient(180deg,#10202f,#0d1b2a); position:sticky; top:0; z-index:100; border-bottom:1px solid var(--line); box-shadow:0 4px 24px rgba(0,0,0,0.25);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; padding:12px 32px; max-width:1180px; margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:12px; color:var(--cream);}
+  .logo img{height:54px; width:auto;}
+  .logo-text .name{font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.05rem; letter-spacing:1px; color:var(--cream);}
+  .logo-text .tagline{font-size:0.62rem; letter-spacing:1.8px; color:var(--silver-light); text-transform:uppercase;}
+  nav ul{display:flex; gap:28px; list-style:none;}
+  nav a{color:#c9d2da; font-size:0.8rem; letter-spacing:0.5px; text-transform:uppercase; font-weight:600; padding-bottom:4px; border-bottom:2px solid transparent; transition:color .25s ease,border-color .25s ease;}
+  nav a:hover, nav a.active{color:var(--silver-light); border-color:var(--silver);}
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+  .nav-phone{color:var(--cream); font-size:0.85rem; font-weight:600; white-space:nowrap;}
+  .nav-phone span{display:block; color:var(--silver-light); font-size:0.65rem; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;}
+
+  .hero{background:linear-gradient(115deg, rgba(9,17,26,0.94) 20%, rgba(13,27,42,0.6) 60%, rgba(13,27,42,0.35)),
+      url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    color:var(--cream); padding:60px 0 0 0; position:relative;}
+  .hero::after{content:''; position:absolute; left:0; right:0; bottom:0; height:80px; background:linear-gradient(180deg,transparent,var(--cream)); pointer-events:none;}
+  .hero-inner{max-width:1180px; margin:0 auto; padding:0 32px 60px; display:grid; grid-template-columns:1.5fr 1fr; gap:50px; align-items:start; position:relative; z-index:1;}
+  .hero h1{font-size:3rem; line-height:1.08; margin:14px 0 18px; color:var(--cream);}
+  .hero h1 em{font-style:normal; color:var(--silver-light);}
+  .hero p.sub{color:#cfd6dc; font-size:1.05rem; max-width:480px; margin-bottom:26px;}
+  .hero-badges{display:flex; flex-wrap:wrap; gap:26px; margin-bottom:30px;}
+  .badge{display:flex; align-items:center; gap:10px; font-size:0.8rem; color:#d8dde2;}
+  .badge .ico{width:34px; height:34px; border:1px solid var(--silver); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--silver-light); font-size:0.9rem; flex-shrink:0;}
+  .hero-actions{display:flex; gap:14px;}
+
+  .estimate-card{background:linear-gradient(160deg,#16283b,#0d1b2a); border:1px solid rgba(143,163,184,0.35); border-radius:8px; padding:32px; margin-top:6px; box-shadow:0 24px 60px rgba(0,0,0,0.45);}
+  .estimate-card .eyebrow{margin-bottom:6px;}
+  .estimate-card h3{color:var(--cream); font-size:1.3rem; margin-bottom:6px;}
+  .estimate-card p{color:#a9b4bd; font-size:0.85rem; margin-bottom:20px;}
+  .estimate-card input, .estimate-card select, .estimate-card textarea{width:100%; background:#0f2033; border:1px solid #2a4256; color:var(--cream); border-radius:4px; padding:12px 14px; margin-bottom:12px; font-size:0.85rem; font-family:inherit; transition:border-color .2s ease;}
+  .estimate-card input:focus, .estimate-card select:focus, .estimate-card textarea:focus{outline:none; border-color:var(--silver);}
+  .estimate-card textarea{resize:vertical; min-height:70px;}
+  .estimate-card ::placeholder{color:#7d8791;}
+  .estimate-card .btn{width:100%; justify-content:center;}
+
+  .services-strip{background:linear-gradient(180deg,#0f2033,#0d1b2a); border-top:1px solid var(--line);}
+  .services-strip .wrap{display:flex; justify-content:space-between; padding:24px 32px; flex-wrap:wrap; gap:18px;}
+  .service-item{display:flex; align-items:center; gap:12px; color:#d8dde2; font-size:0.76rem; letter-spacing:0.6px; text-transform:uppercase; font-weight:600; padding:8px 4px; transition:color .2s ease, transform .2s ease;}
+  .service-item:hover{color:var(--silver-light); transform:translateY(-2px);}
+  .service-item .ico{color:var(--silver-light); font-size:1.3rem;}
+
+  section{padding:76px 0;}
+  .section-head{text-align:center; max-width:600px; margin:0 auto 46px;}
+  .section-head h2{font-size:2.05rem; margin-top:8px;}
+
+  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .gallery-card figure{position:relative; overflow:hidden; border-radius:8px; box-shadow:0 10px 30px rgba(13,27,42,0.15);}
+  .gallery-card img{width:100%; height:230px; object-fit:cover; display:block; transition:transform .5s ease;}
+  .gallery-card:hover img{transform:scale(1.06);}
+  .tag{position:absolute; bottom:10px; padding:4px 10px; font-size:0.65rem; letter-spacing:1px; text-transform:uppercase; font-weight:700; color:#fff; border-radius:3px;}
+  .tag.before{left:10px; background:rgba(15,20,26,0.75);}
+  .tag.after{right:10px; background:var(--silver); color:var(--navy);}
+  .gallery-card figcaption{padding:14px 4px 0; font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.4px;}
+  .gallery-cta{text-align:center; margin-top:40px;}
+
+  .gallery-category{margin-bottom:52px;}
+  .gallery-category:last-child{margin-bottom:0;}
+  .gallery-category h3{font-size:1.55rem; margin-bottom:22px; padding-bottom:10px; border-bottom:1px solid var(--line); color:var(--navy);}
+  .ba-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .ba-card{border-radius:8px; overflow:hidden; box-shadow:0 10px 30px rgba(13,27,42,0.13); background:#fff;}
+  .ba-images{display:grid; grid-template-columns:1fr 1fr;}
+  .ba-img{position:relative; overflow:hidden;}
+  .ba-img img{width:100%; height:190px; object-fit:cover; display:block; transition:transform .5s ease;}
+  .ba-card:hover .ba-img img{transform:scale(1.06);}
+  .ba-label{position:absolute; bottom:8px; left:8px; padding:3px 9px; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; font-weight:700; color:#fff; background:rgba(15,20,26,0.75); border-radius:3px;}
+  .ba-img.after .ba-label{left:auto; right:8px; background:var(--silver); color:var(--navy);}
+  @media (max-width:900px){
+    .ba-grid{grid-template-columns:1fr;}
+  }
+
+  .stats-bar{background:linear-gradient(115deg,#0d1b2a,#16283b); color:var(--cream); display:grid; grid-template-columns:repeat(4,1fr) 1.3fr; box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);}
+  .stat{padding:32px 20px; text-align:center; border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none; background:rgba(0,0,0,0.18);}
+  .stat .num{font-family:'Cormorant Garamond',serif; font-size:1.9rem; color:var(--silver-light); font-weight:700;}
+  .stat .label{font-size:0.7rem; letter-spacing:1.2px; text-transform:uppercase; color:#c9d2da; margin-top:4px;}
+  .stat .stars{color:var(--silver-light); font-size:0.95rem; margin-top:2px;}
+
+  .why-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  .why-grid img{width:100%; height:440px; object-fit:cover; border-radius:10px; box-shadow:0 24px 50px rgba(13,27,42,0.2);}
+  .why-list{list-style:none; margin:22px 0 28px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .why-list li{display:flex; gap:10px; font-size:0.9rem; align-items:flex-start;}
+  .why-list li::before{content:"✓"; color:var(--silver); font-weight:700;}
+
+  .reviews{background:#eef1f4;}
+  .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .review-card{background:#fff; border-radius:8px; padding:26px; box-shadow:0 8px 24px rgba(13,27,42,0.06); border:1px solid #e3e8ec;}
+  .review-card .stars{color:var(--silver); font-size:0.95rem; margin-bottom:10px;}
+  .review-card p.quote{font-size:0.88rem; color:#3a4552; margin-bottom:16px; line-height:1.55;}
+  .review-card .who{font-size:0.8rem; font-weight:700; color:var(--navy);}
+  .review-card .where{font-size:0.72rem; color:var(--gray); text-transform:uppercase; letter-spacing:0.5px;}
+
+  .financing{background:linear-gradient(100deg,#0d1b2a,#13253a); color:var(--cream);}
+  .financing .wrap{display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center;}
+  .financing h2{color:var(--cream); font-size:2rem; margin-bottom:12px;}
+  .financing p{color:#c9d2da; margin-bottom:22px; max-width:440px;}
+  .financing-box{background:linear-gradient(160deg,#16283b,#0d1b2a); border:1px solid rgba(143,163,184,0.35); border-radius:8px; padding:28px; text-align:center; box-shadow:0 16px 40px rgba(0,0,0,0.35);}
+  .financing-box .price{font-family:'Cormorant Garamond',serif; color:var(--silver-light); font-size:2.2rem; font-weight:700;}
+  .financing-box .price span{font-size:1rem; color:#c9d2da;}
+  .financing-box .fine{font-size:0.72rem; color:#8a94a0; margin-top:6px;}
+
+  .service-area{text-align:center; padding-bottom:0;}
+  .service-area .cities{color:var(--gray); font-size:0.9rem; letter-spacing:0.3px; margin-top:6px;}
+
+  .partners{padding:36px 0; border-top:1px solid #e3e8ec;}
+  .partners .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; opacity:0.75; font-weight:700; color:var(--gray); font-size:0.95rem; letter-spacing:0.3px;}
+
+  .final-cta{background:linear-gradient(100deg,#10202f,#0d1b2a); color:var(--cream);}
+  .final-cta .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding-top:40px; padding-bottom:40px;}
+  .final-cta h2{color:var(--cream); font-size:1.55rem; max-width:360px;}
+  .final-cta p{color:#a9b4bd; font-size:0.85rem; margin-top:6px;}
+  .final-contacts{display:flex; gap:30px;}
+  .final-contacts div{font-size:0.85rem; color:#d8dde2;}
+  .final-contacts span{display:block; color:var(--silver-light); font-size:0.68rem; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:4px;}
+
+  footer{background:linear-gradient(180deg,#0d1b2a,#0a141f); color:#a9b4bd; border-top:1px solid var(--line); padding:56px 0 0;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:36px;}
+  .footer-grid h4{color:var(--cream); font-size:0.8rem; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:16px;}
+  .footer-grid ul{list-style:none;}
+  .footer-grid li{margin-bottom:10px; font-size:0.85rem;}
+  .footer-grid li a:hover{color:var(--silver-light);}
+  .footer-brand img{height:48px; margin-bottom:12px;}
+  .footer-brand p{font-size:0.85rem; margin-top:6px; max-width:280px;}
+  .footer-bottom{border-top:1px solid var(--line); text-align:center; padding:18px 0; font-size:0.75rem;}
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .hero-inner{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .why-grid img{height:280px;}
+    .gallery-grid{grid-template-columns:1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .stats-bar{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(5){grid-column:span 2;}
+    .financing .wrap{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:2.1rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a class="logo" href="#">
+      <img src="images/logo.png" alt="MHS Home Improvement Group logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#financing">Financing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <div class="nav-phone"><span>Call Now</span>(214) 448-0013</div>
+      <a class="btn" href="#contact">Get a Free Estimate</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Dallas-Fort Worth's Trusted Builders</div>
+      <h1>Home Improvement<br><em>Done Right</em></h1>
+      <p class="sub">Kitchens, bathrooms, whole-home renovations, and commercial build-outs — serving Dallas and the surrounding DFW area.</p>
+      <div class="hero-badges">
+        <div class="badge"><span class="ico">&#10003;</span> Licensed &amp; Insured</div>
+        <div class="badge"><span class="ico">&#8962;</span> Family Owned</div>
+        <div class="badge"><span class="ico">$</span> Free Estimates</div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="#contact">Get a Free Estimate &rarr;</a>
+        <a class="btn btn-dark" href="tel:2144480013">Call Now (214) 448-0013</a>
+      </div>
+    </div>
+    <div class="estimate-card" id="contact">
+      <div class="eyebrow">Get Your</div>
+      <h3>Free Estimate</h3>
+      <p>Fill out the form and we'll contact you within 24 hours.</p>
+      <form onsubmit="return false;">
+        <input type="text" placeholder="Full Name">
+        <input type="tel" placeholder="Phone Number">
+        <input type="email" placeholder="Email Address">
+        <select>
+          <option>Project Type</option>
+          <option>Kitchen Remodeling</option>
+          <option>Bathroom Remodeling</option>
+          <option>Home Addition</option>
+          <option>Outdoor Living</option>
+          <option>Commercial</option>
+        </select>
+        <textarea placeholder="Tell us about your project..."></textarea>
+        <button class="btn" type="submit">Send Request &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="services-strip" id="services">
+  <div class="wrap">
+    <div class="service-item"><span class="ico">&#8962;</span> Kitchen Remodeling</div>
+    <div class="service-item"><span class="ico">&#128705;</span> Bathroom Remodeling</div>
+    <div class="service-item"><span class="ico">&#127968;</span> Outdoor Living</div>
+    <div class="service-item"><span class="ico">&#9638;</span> Flooring</div>
+    <div class="service-item"><span class="ico">&#65291;</span> Room Additions</div>
+    <div class="service-item"><span class="ico">&#127970;</span> Commercial</div>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Transforming Spaces, Building Dreams</div>
+      <h2>Before &amp; After Transformations</h2>
+    </div>
+    <div class="gallery-category">
+      <h3>Kitchens</h3>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/kitchen-1-before.jpg" alt="Kitchen before remodel"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/kitchen-1-after.jpg" alt="Kitchen after remodel with herringbone backsplash"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/kitchen-2-before.jpg" alt="Dated kitchen before remodel"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/kitchen-2-after.jpg" alt="Modern kitchen after remodel with gray shaker cabinets"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/kitchen-3-before.jpg" alt="Kitchen gutted for remodel"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/kitchen-3-after.jpg" alt="White shaker kitchen with butcher block island after remodel"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-category">
+      <h3>Bathrooms</h3>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/bath-1-before.jpg" alt="Dated bathroom before remodel"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/bath-1-after.jpg" alt="Bathroom after remodel with blue tile glass shower"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/bath-2-before.jpg" alt="Dated bathroom vanity before remodel"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/bath-2-after.jpg" alt="Bathroom after remodel with black hex tile and gold fixtures"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/bath-3-before.jpg" alt="Bathroom stripped for remodel"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/bath-3-after.jpg" alt="Bathroom after remodel with white penny tile shower"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-category">
+      <h3>Whole-Home Renovations</h3>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/home-1-before.jpg" alt="Living room before renovation"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/home-1-after.jpg" alt="Finished basement after renovation with copper accent wall"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/home-2-before.jpg" alt="Traditional living room before renovation"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/home-2-after.jpg" alt="Modern living room after renovation with stacked stone fireplace"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img before"><img src="images/home-3-before.jpg" alt="Cluttered room before renovation"><span class="ba-label">Before</span></div>
+            <div class="ba-img after"><img src="images/home-3-after.jpg" alt="Bonus room after renovation with new flooring"><span class="ba-label">After</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="num">15+</div><div class="label">Years Experience</div></div>
+  <div class="stat"><div class="num">400+</div><div class="label">Projects Completed</div></div>
+  <div class="stat"><div class="num">300+</div><div class="label">Happy Clients</div></div>
+  <div class="stat"><div class="num">4.9</div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="label">Google Rating</div></div>
+  <div class="stat"><div class="num">Serving DFW</div><div class="label">35-Mile Radius of Dallas</div></div>
+</div>
+
+<section id="why">
+  <div class="wrap why-grid">
+    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=900&auto=format&fit=crop" alt="Completed home exterior">
+    <div>
+      <div class="eyebrow">Why Homeowners Choose Us</div>
+      <h2>Choose MHS Home Improvement Group</h2>
+      <p style="color:var(--gray); margin-top:14px; max-width:440px;">We treat your home like our own. From small updates to full renovations, our team delivers quality craftsmanship, honest pricing, and beautiful results — on time and on budget.</p>
+      <ul class="why-list">
+        <li>High Quality Craftsmanship</li>
+        <li>Top Rated Local Contractor</li>
+        <li>Transparent Pricing</li>
+        <li>Financing Available</li>
+        <li>On-Time &amp; On-Budget</li>
+        <li>Satisfaction Guaranteed</li>
+      </ul>
+      <a class="btn btn-dark" href="#">About Our Company &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What Homeowners Say</div>
+      <h2>Reviews From DFW Homeowners</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">Our kitchen remodel came in on budget and the crew was on site every day they said they'd be. Couldn't be happier with the finish work.</p>
+        <div class="who">Sarah M.</div>
+        <div class="where">Dallas, TX</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">Professional from the first estimate to the final walkthrough. They communicated clearly through the whole bathroom renovation.</p>
+        <div class="who">James R.</div>
+        <div class="where">Plano, TX</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">Turned our backyard into an actual living space. Fair pricing and they cleaned up after themselves every single day.</p>
+        <div class="who">Angela T.</div>
+        <div class="where">Garland, TX</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="financing" id="financing">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Financing Available</div>
+      <h2>Make Your Dream Project Affordable</h2>
+      <p>Flexible financing options to fit your budget. Get the home you've always wanted, today.</p>
+      <a class="btn" href="#contact">Learn More About Financing &rarr;</a>
+    </div>
+    <div class="financing-box">
+      <div style="font-size:0.7rem; letter-spacing:1.5px; text-transform:uppercase; color:#a9b4bd;">Payments As Low As</div>
+      <div class="price">$99<span>/month</span></div>
+      <div class="fine">Subject to credit approval.</div>
+    </div>
+  </div>
+</div>
+
+<section class="service-area">
+  <div class="wrap">
+    <div class="eyebrow">Proudly Serving The Dallas-Fort Worth Area</div>
+    <p class="cities">Dallas &nbsp;&bull;&nbsp; Plano &nbsp;&bull;&nbsp; Garland &nbsp;&bull;&nbsp; Rockwall &nbsp;&bull;&nbsp; Mesquite &nbsp;&bull;&nbsp; Irving &nbsp;&bull;&nbsp; Forney &nbsp;&bull;&nbsp; &amp; surrounding areas within 35 miles of Downtown Dallas</p>
+  </div>
+</section>
+
+<div class="partners">
+  <div class="wrap">
+    <div>HomeAdvisor</div>
+    <div>Houzz</div>
+    <div>Google Guaranteed</div>
+    <div>BBB Accredited</div>
+    <div>Angi</div>
+  </div>
+</div>
+
+<div class="final-cta">
+  <div class="wrap">
+    <div>
+      <h2>Ready to start your next project?</h2>
+      <p>Contact us today for your free estimate.</p>
+    </div>
+    <div class="final-contacts">
+      <div><span>Call Us</span>(214) 448-0013</div>
+      <div><span>Text Us</span>(214) 448-0013</div>
+    </div>
+    <a class="btn" href="#contact">Get a Free Estimate &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="MHS Home Improvement Group logo">
+      <p>Family-owned and operated home improvement company serving Dallas-Fort Worth with pride and integrity.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Kitchen Remodeling</a></li>
+        <li><a href="#">Bathroom Remodeling</a></li>
+        <li><a href="#">Home Additions</a></li>
+        <li><a href="#">Outdoor Living</a></li>
+        <li><a href="#">Commercial Remodeling</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#financing">Financing</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <ul>
+        <li>Dallas-Fort Worth, TX</li>
+        <li>Serving a 35-mile radius</li>
+        <li>(214) 448-0013</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 MHS Home Improvement Group. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
